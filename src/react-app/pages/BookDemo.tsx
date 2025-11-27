@@ -84,42 +84,56 @@ export default function BookDemo() {
   const handlePayment = (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Check if Razorpay Key is configured
+    if (!RAZORPAY_KEY_ID || RAZORPAY_KEY_ID === '') {
+      alert('⚠️ Payment system is not configured.\n\nPlease add VITE_RAZORPAY_KEY_ID to your .env file and restart the server.');
+      console.error('Missing VITE_RAZORPAY_KEY_ID in environment variables');
+      return;
+    }
+
+    // Check if Razorpay script is loaded
     if (!window.Razorpay) {
-      alert('Payment system is loading. Please try again.');
+      alert('Payment system is still loading. Please wait a moment and try again.');
       return;
     }
 
     setIsLoading(true);
 
-    const options: RazorpayOptions = {
-      key: RAZORPAY_KEY_ID,
-      amount: DEMO_PRICE_INR,
-      currency: 'INR',
-      name: 'FluentEdge Lab',
-      description: 'Demo Class Booking Fee',
-      handler: function (response: RazorpayResponse) {
-        // Payment successful
-        console.log('Payment ID:', response.razorpay_payment_id);
-        setPaymentSuccess(true);
-        setIsLoading(false);
-      },
-      prefill: {
-        name: formData.name,
-        email: formData.email,
-        contact: formData.phone,
-      },
-      theme: {
-        color: '#1e3a8a', // Blue-900
-      },
-      modal: {
-        ondismiss: function () {
+    try {
+      const options: RazorpayOptions = {
+        key: RAZORPAY_KEY_ID,
+        amount: DEMO_PRICE_INR,
+        currency: 'INR',
+        name: 'FluentEdge Lab',
+        description: 'Demo Class Booking Fee',
+        handler: function (response: RazorpayResponse) {
+          // Payment successful
+          console.log('Payment ID:', response.razorpay_payment_id);
+          setPaymentSuccess(true);
           setIsLoading(false);
         },
-      },
-    };
+        prefill: {
+          name: formData.name,
+          email: formData.email,
+          contact: formData.phone,
+        },
+        theme: {
+          color: '#1e3a8a', // Blue-900
+        },
+        modal: {
+          ondismiss: function () {
+            setIsLoading(false);
+          },
+        },
+      };
 
-    const razorpay = new window.Razorpay(options);
-    razorpay.open();
+      const razorpay = new window.Razorpay(options);
+      razorpay.open();
+    } catch (error) {
+      console.error('Razorpay Error:', error);
+      alert('Something went wrong. Please try again.');
+      setIsLoading(false);
+    }
   };
 
   // Success screen - redirecting to Cal.com
