@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react';
 import Header from '@/react-app/components/Header';
 import Footer from '@/react-app/components/Footer';
 
-// 🔴 CONFIGURATION - Update these values
-const RAZORPAY_KEY_ID = 'YOUR_RAZORPAY_KEY_ID'; // Get from Razorpay Dashboard
-const DEMO_PRICE_INR = 49900; // Amount in paise (₹499 = 49900 paise)
-const DEMO_PRICE_DISPLAY = '₹499';
-const CAL_BOOKING_LINK = 'https://cal.com/fluentedge-lab-6gdbwa/60min';
+// Configuration from environment variables
+const RAZORPAY_KEY_ID = import.meta.env.VITE_RAZORPAY_KEY_ID || '';
+const DEMO_PRICE_INR = Number(import.meta.env.VITE_DEMO_PRICE_INR) || 49900;
+const DEMO_PRICE_DISPLAY = import.meta.env.VITE_DEMO_PRICE_DISPLAY || '₹499';
+const CAL_BOOKING_LINK = import.meta.env.VITE_CAL_BOOKING_LINK || 'https://cal.com/fluentedge-lab-6gdbwa/60min';
 
 // Razorpay type declaration
 declare global {
