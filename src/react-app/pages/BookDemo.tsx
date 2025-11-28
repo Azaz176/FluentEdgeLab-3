@@ -21,6 +21,7 @@ interface RazorpayOptions {
   currency: string;
   name: string;
   description: string;
+  order_id?: string; // Added for server-side order
   image?: string;
   handler: (response: RazorpayResponse) => void;
   prefill?: {
@@ -81,7 +82,41 @@ export default function BookDemo() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handlePayment = (e: React.FormEvent) => {
+  // Create order on server (with auto-capture enabled)
+  const createOrder = async (): Promise<string | null> => {
+    try {
+      const response = await fetch('/api/create-razorpay-order', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          amount: DEMO_PRICE_INR,
+          currency: 'INR',
+          receipt: `demo_${Date.now()}`,
+          notes: {
+            customer_name: formData.name,
+            customer_email: formData.email,
+            customer_phone: formData.phone,
+            purpose: 'Demo Class Booking',
+          },
+        }),
+      });
+
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.error || 'Failed to create order');
+      }
+
+      const data = await response.json();
+      return data.order_id;
+    } catch (error) {
+      console.error('Error creating order:', error);
+      return null;
+    }
+  };
+
+  const handlePayment = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Check if Razorpay Key is configured
@@ -100,15 +135,28 @@ export default function BookDemo() {
     setIsLoading(true);
 
     try {
+      // Step 1: Create order on server (with auto-capture)
+      const orderId = await createOrder();
+      
+      if (!orderId) {
+        // Fallback to direct checkout if order creation fails
+        console.warn('Order creation failed, using direct checkout');
+      }
+
+      // Step 2: Open Razorpay checkout
       const options: RazorpayOptions = {
         key: RAZORPAY_KEY_ID,
         amount: DEMO_PRICE_INR,
         currency: 'INR',
         name: 'FluentEdge Lab',
         description: 'Demo Class Booking Fee',
+        ...(orderId && { order_id: orderId }), // Include order_id if available
         handler: function (response: RazorpayResponse) {
-          // Payment successful
+          // Payment successful - with order_id, payment is AUTO-CAPTURED!
           console.log('Payment ID:', response.razorpay_payment_id);
+          if (response.razorpay_order_id) {
+            console.log('Order ID:', response.razorpay_order_id);
+          }
           setPaymentSuccess(true);
           setIsLoading(false);
         },

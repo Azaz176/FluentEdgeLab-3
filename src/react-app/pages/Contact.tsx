@@ -66,8 +66,8 @@ export default function Contact() {
             <div className="space-y-4 mb-8">
               <div>
                 <p className="font-semibold text-blue-900 dark:text-white mb-1">Email</p>
-                <a href="mailto:info@fluentedge.com" className="text-blue-900 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300">
-                  info@fluentedge.com
+                <a href="mailto:pritigogoi@fluentedgelab.com" className="text-blue-900 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300">
+                pritigogoi@fluentedgelab.com
                 </a>
               </div>
               <div>
@@ -95,7 +95,7 @@ export default function Contact() {
               <div className="flex space-x-4">
                 <a href="#" className="text-blue-900 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300">Facebook</a>
                 <a href="#" className="text-blue-900 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300">Instagram</a>
-                <a href="#" className="text-blue-900 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300">LinkedIn</a>
+                <a href="https://www.linkedin.com/in/fluentedgelab-l-981806383/" className="text-blue-900 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300">LinkedIn</a>
                 <a href="#" className="text-blue-900 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300">YouTube</a>
               </div>
             </div>

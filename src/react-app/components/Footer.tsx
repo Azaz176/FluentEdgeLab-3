@@ -74,7 +74,7 @@ export default function Footer() {
             <a href="#" className="text-gray-400 hover:text-white transition">
               <Facebook size={20} />
             </a>
-            <a href="#" className="text-gray-400 hover:text-white transition">
+            <a href="https://www.linkedin.com/in/fluentedgelab-l-981806383/" className="text-gray-400 hover:text-white transition">
               <Linkedin size={20} />
             </a>
           </div>
