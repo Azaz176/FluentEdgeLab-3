@@ -1,6 +1,58 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
+  "redirects": [
+    {
+      "source": "/about-us",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us/",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/courses/",
+      "destination": "/courses",
+      "permanent": true
+    },
+    {
+      "source": "/book-demo/",
+      "destination": "/book-demo",
+      "permanent": true
+    },
+    {
+      "source": "/testimonials/",
+      "destination": "/testimonials",
+      "permanent": true
+    },
+    {
+      "source": "/blog/",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/faq/",
+      "destination": "/faq",
+      "permanent": true
+    },
+    {
+      "source": "/free-resources/",
+      "destination": "/free-resources",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/api/:path*",
