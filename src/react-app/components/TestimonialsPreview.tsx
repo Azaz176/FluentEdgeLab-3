@@ -16,7 +16,7 @@ const TestimonialCarousel = () => {
       name: "Maheema Aggarwal",
       exam: "IELTS",
       score: "8",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face"
+      image: "/testimonials/shinchan.jpg"
     },
     {
       id: 2,
@@ -24,7 +24,7 @@ const TestimonialCarousel = () => {
       name: "Rahul Verma",
       exam: "TOEFL",
       score: "110",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+      image:  "/testimonials/shinchan.jpg"
     },
     {
       id: 3,
@@ -32,7 +32,7 @@ const TestimonialCarousel = () => {
       name: "Priya Sharma",
       exam: "PTE",
       score: "85",
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
+      image:  "/testimonials/shinchan.jpg"
     },
     {
       id: 4,
@@ -40,7 +40,7 @@ const TestimonialCarousel = () => {
       name: "Alex Chen",
       exam: "GRE",
       score: "328",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
+      image:  "/testimonials/shinchan.jpg"
     },
     {
       id: 5,
@@ -48,7 +48,7 @@ const TestimonialCarousel = () => {
       name: "Anjali Mehta",
       exam: "CELPIP",
       score: "10",
-      image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face"
+      image:  "/testimonials/shinchan.jpg"
     },
     {
       id: 6,
@@ -56,7 +56,7 @@ const TestimonialCarousel = () => {
       name: "Vikram Singh",
       exam: "IELTS",
       score: "7.5",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face"
+      image:  "/testimonials/shinchan.jpg"
     },
     {
       id: 7,
@@ -64,7 +64,7 @@ const TestimonialCarousel = () => {
       name: "Sneha Patel",
       exam: "Duolingo",
       score: "130",
-      image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=150&h=150&fit=crop&crop=face"
+      image:  "/testimonials/shinchan.jpg"
     }
   ];
 
