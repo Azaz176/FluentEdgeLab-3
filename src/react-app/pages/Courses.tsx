@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import Header from '@/react-app/components/Header';
 import Footer from '@/react-app/components/Footer';
+import SEO from '@/react-app/components/SEO';
 
 export default function Courses() {
   const courses = [
@@ -68,6 +69,12 @@ export default function Courses() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-slate-950 transition-colors duration-300">
+      <SEO 
+        title="English Proficiency Courses - IELTS, TOEFL, PTE, CELPIP, GRE | FluentEdgeLab"
+        description="Explore our comprehensive English proficiency courses: IELTS, TOEFL, PTE, CELPIP, GRE Verbal & Duolingo. Expert training with personalized attention. Enroll now!"
+        keywords="IELTS course, TOEFL course, PTE training, CELPIP preparation, GRE verbal course, Duolingo test prep, English courses, test preparation"
+        canonicalUrl="https://fluentedgelab.com/courses"
+      />
       <Header />
       <main className="max-w-6xl mx-auto px-6 py-20">
         <h1 className="text-5xl md:text-6xl font-bold text-center text-blue-900 dark:text-white mb-4">Our Courses</h1>

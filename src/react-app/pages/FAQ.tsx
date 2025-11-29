@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import Header from '@/react-app/components/Header';
 import Footer from '@/react-app/components/Footer';
+import SEO from '@/react-app/components/SEO';
 
 export default function FAQ() {
   const [openSection, setOpenSection] = useState<string | null>(null);
@@ -81,6 +82,12 @@ export default function FAQ() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-slate-950 transition-colors duration-300">
+      <SEO 
+        title="FAQ - Frequently Asked Questions | FluentEdgeLab"
+        description="Find answers to common questions about IELTS, TOEFL, PTE, CELPIP & GRE courses at FluentEdgeLab. Learn about test formats, preparation time, fees, and more."
+        keywords="IELTS FAQ, TOEFL questions, PTE preparation FAQ, English test FAQ, FluentEdgeLab FAQ, course fees, demo class"
+        canonicalUrl="https://fluentedgelab.com/faq"
+      />
       <Header />
       <main className="max-w-4xl mx-auto px-6 py-20">
         <h1 className="text-5xl md:text-6xl font-bold text-center text-blue-900 dark:text-white mb-4">Frequently Asked Questions</h1>

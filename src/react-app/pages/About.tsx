@@ -1,10 +1,17 @@
 import { Link } from 'react-router-dom';
 import Header from '@/react-app/components/Header';
 import Footer from '@/react-app/components/Footer';
+import SEO from '@/react-app/components/SEO';
 
 export default function About() {
   return (
     <div className="min-h-screen bg-white dark:bg-slate-950 transition-colors duration-300">
+      <SEO 
+        title="About Ms. Priti Gogoi - Expert IELTS & English Trainer | FluentEdgeLab"
+        description="Meet Ms. Priti Gogoi, an accomplished IELTS/TOEFL/PTE trainer with 10+ years experience. 95% success rate, 5000+ students trained worldwide. Book your demo today!"
+        keywords="Priti Gogoi, IELTS trainer, English language expert, TOEFL specialist, PTE coach, language instructor, FluentEdgeLab founder"
+        canonicalUrl="https://fluentedgelab.com/about"
+      />
       <Header />
       <main className="max-w-6xl mx-auto px-6 py-20">
         <div className="grid md:grid-cols-2 gap-12 mb-16">

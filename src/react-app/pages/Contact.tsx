@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Header from '@/react-app/components/Header';
 import Footer from '@/react-app/components/Footer';
+import SEO from '@/react-app/components/SEO';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -53,6 +54,12 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-slate-950 transition-colors duration-300">
+      <SEO 
+        title="Contact FluentEdgeLab - Get in Touch for IELTS, TOEFL Training"
+        description="Contact FluentEdgeLab for inquiries about IELTS, TOEFL, PTE, CELPIP & GRE training. Email: pritigogoi@fluentedgelab.com, Phone: +91 9999606411. We're here to help!"
+        keywords="contact FluentEdgeLab, IELTS inquiry, TOEFL classes contact, English training support, FluentEdgeLab phone, FluentEdgeLab email"
+        canonicalUrl="https://fluentedgelab.com/contact"
+      />
       <Header />
       <main className="max-w-6xl mx-auto px-6 py-20">
         <h1 className="text-5xl md:text-6xl font-bold text-center text-blue-900 dark:text-white mb-4">Contact Us</h1>

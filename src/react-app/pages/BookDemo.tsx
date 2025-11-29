@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Header from '@/react-app/components/Header';
 import Footer from '@/react-app/components/Footer';
+import SEO from '@/react-app/components/SEO';
 
 // Configuration from environment variables
 const RAZORPAY_KEY_ID = import.meta.env.VITE_RAZORPAY_KEY_ID || '';
@@ -206,6 +207,12 @@ export default function BookDemo() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-slate-950 transition-colors duration-300">
+      <SEO 
+        title="Book Free Demo Class - IELTS, TOEFL, PTE Training | FluentEdgeLab"
+        description="Book your FREE demo class with FluentEdgeLab! Experience our expert IELTS, TOEFL, PTE, CELPIP & GRE training. Get personalized assessment and study plan."
+        keywords="book demo class, free IELTS demo, TOEFL trial class, PTE demo session, English test preparation demo, FluentEdgeLab demo"
+        canonicalUrl="https://fluentedgelab.com/book-demo"
+      />
       <Header />
       <main className="max-w-4xl mx-auto px-6 py-20">
         <div className="text-center mb-12">
