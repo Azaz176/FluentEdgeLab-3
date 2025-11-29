@@ -42,8 +42,8 @@ export default function Footer() {
 
           <div>
             <h3 className="text-sm font-bold mb-4 tracking-wider">CONTACT</h3>
-            <p className="text-gray-400 text-sm mb-2">Email: info@fluentedge.com</p>
-            <p className="text-gray-400 text-sm mb-4">Phone: +1 (234) 567-890</p>
+            <p className="text-gray-400 text-sm mb-2">Email: pritigogoi@fluentedgelab.com</p>
+            <p className="text-gray-400 text-sm mb-4">Phone: +91 9999606411</p>
             <Link
               to="/book-demo"
               className="inline-block px-4 py-2 bg-blue-900 dark:bg-blue-600 text-white text-sm font-semibold rounded hover:bg-blue-800 dark:hover:bg-blue-500 transition"

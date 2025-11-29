@@ -5,6 +5,7 @@ import CoursesSnapshot from '@/react-app/components/CoursesSnapshot';
 import TestimonialsPreview from '@/react-app/components/TestimonialsPreview';
 import GlobalPresence from '@/react-app/components/GlobalPresence';
 import CertifiedBy from '@/react-app/components/CertifiedBy';
+import FAQSection from '@/react-app/components/FAQSection';
 import Footer from '@/react-app/components/Footer';
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
         <TestimonialsPreview />
         <GlobalPresence />
         <CertifiedBy />
+        <FAQSection />
       </main>
       <Footer />
     </div>
