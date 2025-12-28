@@ -10,57 +10,57 @@ export default function Testimonials() {
   const videoTestimonials = [
     {
       id: 1,
-      name: 'Sarah Johnson',
+      name: 'Dr. Monika Dhankhar',
       course: 'IELTS Band 8.0',
       thumbnail: '/testimonials/shinchan.jpg',
       videoId: 'dQw4w9WgXcQ'
     },
     {
       id: 2,
-      name: 'Ahmed Hassan',
-      course: 'TOEFL 110',
-      thumbnail: '/testimonials/shinchan.jpg',
-      videoId: 'dQw4w9WgXcQ'
-    },
-    {
-      id: 3,
-      name: 'Priya Sharma',
-      course: 'PTE 85',
-      thumbnail: '/testimonials/shinchan.jpg',
-      videoId: 'dQw4w9WgXcQ'
-    },
-    {
-      id: 4,
-      name: 'Michael Chen',
-      course: 'GRE 328',
-      thumbnail: '/testimonials/shinchan.jpg',
-      videoId: 'dQw4w9WgXcQ'
-    },
-    {
-      id: 5,
-      name: 'Maria Garcia',
+      name: 'Hemant Adhikari',
       course: 'IELTS Band 7.5',
       thumbnail: '/testimonials/shinchan.jpg',
       videoId: 'dQw4w9WgXcQ'
     },
     {
-      id: 6,
-      name: 'David Kim',
-      course: 'CELPIP 9',
-      thumbnail: '/testimonials/shinchan.jpg',
-      videoId: 'dQw4w9WgXcQ'
-    },
-    {
-      id: 7,
-      name: 'Emma Thompson',
+      id: 3,
+      name: 'Azaz Ali',
       course: 'IELTS Band 8.5',
       thumbnail: '/testimonials/shinchan.jpg',
       videoId: 'dQw4w9WgXcQ'
     },
     {
+      id: 4,
+      name: 'Mohit Sorout',
+      course: 'IELTS Band 7.5',
+      thumbnail: '/testimonials/shinchan.jpg',
+      videoId: 'dQw4w9WgXcQ'
+    },
+    {
+      id: 5,
+      name: 'Sumit Vedwan',
+      course: 'IELTS Band 8.0',
+      thumbnail: '/testimonials/shinchan.jpg',
+      videoId: 'dQw4w9WgXcQ'
+    },
+    {
+      id: 6,
+      name: 'Dhruv Thukral',
+      course: 'IELTS Band 8.0',
+      thumbnail: '/testimonials/shinchan.jpg',
+      videoId: 'dQw4w9WgXcQ'
+    },
+    {
+      id: 7,
+      name: 'Chirag Khurana',
+      course: 'GRE 325 & IELTS 8',
+      thumbnail: '/testimonials/shinchan.jpg',
+      videoId: 'dQw4w9WgXcQ'
+    },
+    {
       id: 8,
-      name: 'Raj Patel',
-      course: 'GRE 325',
+      name: 'Janvi Tiwari',
+      course: 'PTE 85',
       thumbnail: '/testimonials/shinchan.jpg',
       videoId: 'dQw4w9WgXcQ'
     }
@@ -68,146 +68,74 @@ export default function Testimonials() {
 
   const testimonials = [
     {
-      name: 'Sarah Johnson',
-      country: 'Canada',
-      course: 'IELTS',
-      text: 'Improved my IELTS score from 6.5 to 8.0 in just 3 months! The personalized coaching made all the difference.',
-      rating: 5,
-      image: '/testimonials/shinchan.jpg'
-    },
-    {
-      name: 'Ahmed Hassan',
-      country: 'Egypt',
-      course: 'TOEFL',
-      text: 'Best TOEFL preparation. Flexible timings worked perfectly for me. Scored 110!',
-      rating: 5,
-      image: '/testimonials/shinchan.jpg'
-    },
-    {
-      name: 'Priya Sharma',
+      name: 'Dr. Monika Dhankhar',
       country: 'India',
-      course: 'PTE',
-      text: 'PTE coaching helped me achieve my target score. Highly recommended!',
+      course: 'IELTS Band 8.0',
+      text: 'The teachers and staff gave me the attention and guidance needed to ace the IELTS and also planned out an effective study schedule for me. The study schedule was tailored for the less amount of time I had in hand. I am glad that I chose FluentEdgeLab for my IELTS preparation.',
       rating: 5,
       image: '/testimonials/shinchan.jpg'
     },
     {
-      name: 'Michael Chen',
-      country: 'China',
-      course: 'GRE',
-      text: 'GRE Verbal training was exceptional. Clear explanations and great support.',
-      rating: 5,
-      image: '/testimonials/shinchan.jpg'
-    },
-    {
-      name: 'Maria Garcia',
-      country: 'Spain',
-      course: 'IELTS',
-      text: 'From 6.0 to 7.5! The writing feedback was incredibly helpful.',
-      rating: 5,
-      image: '/testimonials/shinchan.jpg'
-    },
-    {
-      name: 'David Kim',
-      country: 'South Korea',
-      course: 'CELPIP',
-      text: 'Perfect for Canadian immigration. Scored 9 in all sections!',
-      rating: 5,
-      image: '/testimonials/shinchan.jpg'
-    },
-    {
-      name: 'Emma Thompson',
-      country: 'Australia',
-      course: 'IELTS',
-      text: 'The speaking practice sessions transformed my confidence. Went from 6.5 to 8.5 in speaking alone! The mock tests were exactly like the real exam.',
-      rating: 5,
-      image: '/testimonials/shinchan.jpg'
-    },
-    {
-      name: 'Raj Patel',
+      name: 'Hemant Adhikari',
       country: 'India',
-      course: 'GRE',
-      text: 'Scored 328 on my GRE! The vocabulary strategies and quant shortcuts were game-changers. Worth every penny invested.',
+      course: 'IELTS Band 7.5',
+      text: 'FluentEdgeLab\'s IELTS training was exceptional. The practice tests and personalized feedback helped me understand my weaknesses. The instructors were always available for doubt clearing sessions. I achieved my target score on my first attempt!',
       rating: 5,
       image: '/testimonials/shinchan.jpg'
     },
     {
-      name: 'Fatima Al-Rashid',
-      country: 'UAE',
-      course: 'IELTS',
-      text: 'As a working professional, the flexible scheduling was perfect. Achieved band 8 while managing my job. The online resources are excellent!',
+      name: 'Azaz Ali',
+      country: 'India',
+      course: 'IELTS Band 8.5',
+      text: 'I was struggling with the IELTS speaking module, but the expert coaching at FluentEdgeLab transformed my approach. The AI-based practice tools and mock tests were incredibly helpful. Highly recommend for anyone preparing for IELTS!',
       rating: 5,
       image: '/testimonials/shinchan.jpg'
     },
     {
-      name: 'James Wilson',
-      country: 'UK',
-      course: 'TOEFL',
-      text: 'Needed TOEFL for my US university application. Got 115! The integrated writing section tips were incredibly useful.',
+      name: 'Mohit Sorout',
+      country: 'India',
+      course: 'IELTS Band 7.5',
+      text: 'The IELTS preparation at FluentEdgeLab exceeded my expectations. The vocabulary building techniques and reading comprehension strategies were game-changers. Thanks to FluentEdgeLab, I scored well above my target!',
       rating: 5,
       image: '/testimonials/shinchan.jpg'
     },
     {
-      name: 'Yuki Tanaka',
-      country: 'Japan',
-      course: 'PTE',
-      text: 'PTE Academic was challenging for me, but the structured approach and constant feedback helped me score 85. Thank you FluentEdgeLab!',
+      name: 'Sumit Vedwan',
+      country: 'India',
+      course: 'IELTS Band 8.0',
+      text: 'FluentEdgeLab helped me crack IELTS with flying colors! The comprehensive training and mock tests were exactly what I needed. The faculty understood my requirements and customized the course accordingly.',
       rating: 5,
       image: '/testimonials/shinchan.jpg'
     },
     {
-      name: 'Carlos Rodriguez',
-      country: 'Mexico',
-      course: 'Duolingo',
-      text: 'Duolingo English Test prep was fantastic! Scored 135 and got into my dream university. The practice tests were very accurate.',
+      name: 'Dhruv Thukral',
+      country: 'India',
+      course: 'IELTS Band 8.0',
+      text: 'I joined FluentEdgeLab for IELTS preparation just 3 weeks before my exam. Despite the short time, the intensive coaching and strategic tips helped me achieve my target band. The speaking practice sessions were particularly helpful!',
       rating: 5,
       image: '/testimonials/shinchan.jpg'
     },
     {
-      name: 'Anna Petrova',
-      country: 'Russia',
-      course: 'IELTS',
-      text: 'From band 5.5 to 7.5 in just 8 weeks! The one-on-one sessions addressed my specific weaknesses. Highly professional trainers.',
+      name: 'Chirag Khurana',
+      country: 'India',
+      course: 'GRE 325 & IELTS 8',
+      text: 'The GRE and IELTS preparation at FluentEdgeLab was comprehensive and effective. The adaptive test strategies and timed practice sessions prepared me well for both exams. I scored above my target in both!',
       rating: 5,
       image: '/testimonials/shinchan.jpg'
     },
     {
-      name: 'Daniel Okonkwo',
-      country: 'Nigeria',
-      course: 'TOEFL',
-      text: 'Best decision I made for my study abroad dreams. TOEFL score of 108 opened doors to top universities. The support team is amazing!',
+      name: 'Janvi Tiwari',
+      country: 'India',
+      course: 'PTE 85',
+      text: 'I was struggling with the PTE speaking module, but the expert coaching at FluentEdgeLab transformed my approach. The AI-based practice tools and mock tests were incredibly helpful. Highly recommend for anyone preparing for PTE!',
       rating: 5,
       image: '/testimonials/shinchan.jpg'
     },
     {
-      name: 'Sophie Martin',
-      country: 'France',
-      course: 'CELPIP',
-      text: 'Moved to Canada with CLB 10 thanks to FluentEdgeLab! The Canadian accent training and real-life scenario practice were invaluable.',
-      rating: 5,
-      image: '/testimonials/shinchan.jpg'
-    },
-    {
-      name: 'Hassan Ali',
-      country: 'Pakistan',
-      course: 'PTE',
-      text: 'Achieved 79+ in all sections of PTE! The AI-based practice tools and detailed feedback on pronunciation really helped me improve.',
-      rating: 5,
-      image: '/testimonials/shinchan.jpg'
-    },
-    {
-      name: 'Lisa Zhang',
-      country: 'Taiwan',
-      course: 'GRE',
-      text: 'Verbal score jumped from 145 to 162! The reading comprehension strategies and vocabulary building techniques are excellent.',
-      rating: 5,
-      image: '/testimonials/shinchan.jpg'
-    },
-    {
-      name: 'Mohammed Al-Farsi',
-      country: 'Oman',
-      course: 'IELTS',
-      text: 'Needed band 7 for UK visa. Got 7.5! The task 2 essay templates and speaking cue card strategies were extremely helpful.',
+      name: 'Aanya Goel',
+      country: 'India',
+      course: 'PTE 82',
+      text: 'FluentEdgeLab\'s PTE training was exceptional. The practice tests and personalized feedback helped me understand my weaknesses. The instructors were always available for doubt clearing sessions. I achieved my target score on my first attempt!',
       rating: 5,
       image: '/testimonials/shinchan.jpg'
     }

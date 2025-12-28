@@ -13,57 +13,73 @@ const TestimonialCarousel = () => {
     {
       id: 1,
       text: "The teachers and staff gave me the attention and guidance needed to ace the IELTS and also planned out an effective study schedule for me. The study schedule was tailored for the less amount of time I had in hand. I am glad that I chose FluentEdgeLab for my IELTS preparation.",
-      name: "Maheema Aggarwal",
+      name: "Dr. Monika Dhankhar",
       exam: "IELTS",
       score: "8",
       image: "/testimonials/shinchan.jpg"
     },
     {
       id: 2,
-      text: "FluentEdgeLab's TOEFL training was exceptional. The practice tests and personalized feedback helped me understand my weaknesses. The instructors were always available for doubt clearing sessions. I achieved my target score on my first attempt!",
-      name: "Rahul Verma",
-      exam: "TOEFL",
-      score: "110",
-      image:  "/testimonials/shinchan.jpg"
-    },
-    {
-      id: 3,
-      text: "I was struggling with the PTE speaking module, but the expert coaching at FluentEdgeLab transformed my approach. The AI-based practice tools and mock tests were incredibly helpful. Highly recommend for anyone preparing for PTE!",
-      name: "Priya Sharma",
-      exam: "PTE",
-      score: "85",
-      image:  "/testimonials/shinchan.jpg"
-    },
-    {
-      id: 4,
-      text: "The GRE Verbal training exceeded my expectations. The vocabulary building techniques and reading comprehension strategies were game-changers. Thanks to FluentEdgeLab, I scored well above my target!",
-      name: "Alex Chen",
-      exam: "GRE",
-      score: "328",
-      image:  "/testimonials/shinchan.jpg"
-    },
-    {
-      id: 5,
-      text: "FluentEdgeLab helped me crack CELPIP with flying colors! The Canadian-focused training and mock tests were exactly what I needed for my immigration process. The faculty understood my requirements and customized the course accordingly.",
-      name: "Anjali Mehta",
-      exam: "CELPIP",
-      score: "10",
-      image:  "/testimonials/shinchan.jpg"
-    },
-    {
-      id: 6,
-      text: "I joined FluentEdgeLab for IELTS preparation just 3 weeks before my exam. Despite the short time, the intensive coaching and strategic tips helped me achieve Band 7.5. The speaking practice sessions were particularly helpful!",
-      name: "Vikram Singh",
+      text: "FluentEdgeLab's IELTS training was exceptional. The practice tests and personalized feedback helped me understand my weaknesses. The instructors were always available for doubt clearing sessions. I achieved my target score on my first attempt!",
+      name: "Hemant Adhikari",
       exam: "IELTS",
       score: "7.5",
       image:  "/testimonials/shinchan.jpg"
     },
     {
+      id: 3,
+      text: "I was struggling with the IELTS speaking module, but the expert coaching at FluentEdgeLab transformed my approach. The AI-based practice tools and mock tests were incredibly helpful. Highly recommend for anyone preparing for IELTS!",
+      name: "Azaz Ali",
+      exam: "IELTS",
+      score: "8.5",
+      image:  "/testimonials/shinchan.jpg"
+    },
+    {
+      id: 4,
+      text: "The IELTS preparation at FluentEdgeLab exceeded my expectations. The vocabulary building techniques and reading comprehension strategies were game-changers. Thanks to FluentEdgeLab, I scored well above my target!",
+      name: "Mohit Sorout",
+      exam: "IELTS",
+      score: "7.5",
+      image:  "/testimonials/shinchan.jpg"
+    },
+    {
+      id: 5,
+      text: "FluentEdgeLab helped me crack IELTS with flying colors! The comprehensive training and mock tests were exactly what I needed. The faculty understood my requirements and customized the course accordingly.",
+      name: "Sumit Vedwan",
+      exam: "IELTS",
+      score: "8",
+      image:  "/testimonials/shinchan.jpg"
+    },
+    {
+      id: 6,
+      text: "I joined FluentEdgeLab for IELTS preparation just 3 weeks before my exam. Despite the short time, the intensive coaching and strategic tips helped me achieve my target band. The speaking practice sessions were particularly helpful!",
+      name: "Dhruv Thukral",
+      exam: "IELTS",
+      score: "8",
+      image:  "/testimonials/shinchan.jpg"
+    },
+    {
       id: 7,
-      text: "The Duolingo English Test preparation at FluentEdgeLab was quick and effective. The adaptive test strategies and timed practice sessions prepared me well. I got my results in 48 hours and scored above my target!",
-      name: "Sneha Patel",
-      exam: "Duolingo",
-      score: "130",
+      text: "The GRE and IELTS preparation at FluentEdgeLab was comprehensive and effective. The adaptive test strategies and timed practice sessions prepared me well for both exams. I scored above my target in both!",
+      name: "Chirag Khurana",
+      exam: "GRE & IELTS",
+      score: "325 & 8",
+      image:  "/testimonials/shinchan.jpg"
+    },
+    {
+      id: 8,
+      text: "I was struggling with the PTE speaking module, but the expert coaching at FluentEdgeLab transformed my approach. The AI-based practice tools and mock tests were incredibly helpful. Highly recommend for anyone preparing for PTE!",
+      name: "Janvi Tiwari",
+      exam: "PTE",
+      score: "85",
+      image:  "/testimonials/shinchan.jpg"
+    },
+    {
+      id: 9,
+      text: "FluentEdgeLab's PTE training was exceptional. The practice tests and personalized feedback helped me understand my weaknesses. The instructors were always available for doubt clearing sessions. I achieved my target score on my first attempt!",
+      name: "Aanya Goel",
+      exam: "PTE",
+      score: "82",
       image:  "/testimonials/shinchan.jpg"
     }
   ];
