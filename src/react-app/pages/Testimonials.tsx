@@ -24,8 +24,8 @@ export default function Testimonials() {
     },
     {
       id: 3,
-      name: 'Azaz Ali',
-      course: 'IELTS Band 8.5',
+      name: 'Azaz',
+      course: 'IELTS Band 7.0',
       thumbnail: '/testimonials/shinchan.jpg',
       videoId: 'dQw4w9WgXcQ'
     },
@@ -84,9 +84,9 @@ export default function Testimonials() {
       image: '/testimonials/shinchan.jpg'
     },
     {
-      name: 'Azaz Ali',
+      name: 'Azaz',
       country: 'India',
-      course: 'IELTS Band 8.5',
+      course: 'IELTS Band 7.0',
       text: 'I was struggling with the IELTS speaking module, but the expert coaching at FluentEdgeLab transformed my approach. The AI-based practice tools and mock tests were incredibly helpful. Highly recommend for anyone preparing for IELTS!',
       rating: 5,
       image: '/testimonials/shinchan.jpg'

@@ -29,9 +29,9 @@ const TestimonialCarousel = () => {
     {
       id: 3,
       text: "I was struggling with the IELTS speaking module, but the expert coaching at FluentEdgeLab transformed my approach. The AI-based practice tools and mock tests were incredibly helpful. Highly recommend for anyone preparing for IELTS!",
-      name: "Azaz Ali",
+      name: "Azaz",
       exam: "IELTS",
-      score: "8.5",
+      score: "7.0",
       image:  "/testimonials/shinchan.jpg"
     },
     {
