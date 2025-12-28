@@ -16,9 +16,17 @@ app.post("/api/create-razorpay-order", async (c) => {
   try {
     const { amount, currency = "INR", receipt, notes } = await c.req.json();
 
-    // Validate amount
-    if (!amount || amount < 100) {
+    // Validate amount based on currency
+    if (!amount) {
+      return c.json({ error: "Amount is required" }, 400);
+    }
+    
+    if (currency === "INR" && amount < 100) {
       return c.json({ error: "Invalid amount. Minimum is 100 paise (₹1)" }, 400);
+    }
+    
+    if (currency === "USD" && amount < 100) {
+      return c.json({ error: "Invalid amount. Minimum is 100 cents ($1)" }, 400);
     }
 
     const RAZORPAY_KEY_ID = c.env.RAZORPAY_KEY_ID;

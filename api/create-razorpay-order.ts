@@ -18,9 +18,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
     const { amount, currency = 'INR', receipt, notes } = req.body;
 
-    // Validate amount
-    if (!amount || amount < 100) {
+    // Validate amount based on currency
+    if (!amount) {
+      return res.status(400).json({ error: 'Amount is required' });
+    }
+    
+    if (currency === 'INR' && amount < 100) {
       return res.status(400).json({ error: 'Invalid amount. Minimum is 100 paise (₹1)' });
+    }
+    
+    if (currency === 'USD' && amount < 100) {
+      return res.status(400).json({ error: 'Invalid amount. Minimum is 100 cents ($1)' });
     }
 
     const RAZORPAY_KEY_ID = process.env.RAZORPAY_KEY_ID;

@@ -5,9 +5,11 @@ import SEO from '@/react-app/components/SEO';
 
 // Configuration from environment variables
 const RAZORPAY_KEY_ID = import.meta.env.VITE_RAZORPAY_KEY_ID || '';
-const DEMO_PRICE_INR = Number(import.meta.env.VITE_DEMO_PRICE_INR) || 49900;
-const DEMO_PRICE_DISPLAY = import.meta.env.VITE_DEMO_PRICE_DISPLAY || '₹499';
 const CAL_BOOKING_LINK = import.meta.env.VITE_CAL_BOOKING_LINK || 'https://cal.com/fluentedge-lab-6gdbwa/60min';
+
+// Pricing configuration
+const PRICE_INR = 19900; // ₹199 in paise
+const PRICE_USD = 1000; // $10 in cents
 
 // Razorpay type declaration
 declare global {
@@ -52,11 +54,66 @@ interface RazorpayInstance {
 export default function BookDemo() {
   const [isLoading, setIsLoading] = useState(false);
   const [paymentSuccess, setPaymentSuccess] = useState(false);
+  const [isIndia, setIsIndia] = useState<boolean | null>(null); // null = detecting, true = India, false = International
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
   });
+
+  // Detect user location on component mount
+  useEffect(() => {
+    const detectLocation = async () => {
+      // Check for manual override via URL parameter (for testing)
+      const urlParams = new URLSearchParams(window.location.search);
+      const overrideLocation = urlParams.get('location');
+      if (overrideLocation === 'india') {
+        console.log('🧪 TEST MODE: Location manually set to India');
+        setIsIndia(true);
+        return;
+      } else if (overrideLocation === 'international') {
+        console.log('🧪 TEST MODE: Location manually set to International');
+        setIsIndia(false);
+        return;
+      }
+
+      try {
+        // Try to detect location using IP geolocation
+        const response = await fetch('https://ipapi.co/json/');
+        if (response.ok) {
+          const data = await response.json();
+          const detectedCountry = data.country_code;
+          const isIndian = detectedCountry === 'IN';
+          
+          console.log('🌍 Location Detection:', {
+            country: detectedCountry,
+            countryName: data.country_name,
+            isIndia: isIndian,
+            currency: isIndian ? 'INR' : 'USD',
+            price: isIndian ? '₹199' : '$10'
+          });
+          
+          setIsIndia(isIndian);
+        } else {
+          // Fallback: use timezone as indicator
+          const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+          const isIndian = timezone.includes('Asia/Kolkata') || timezone.includes('Calcutta');
+          console.log('🌍 Location Detection (Fallback):', {
+            timezone,
+            isIndia: isIndian
+          });
+          setIsIndia(isIndian);
+        }
+      } catch (error) {
+        console.error('❌ Error detecting location:', error);
+        // Fallback: assume India by default (since you're in India)
+        console.log('🌍 Location Detection: Using default (India)');
+        setIsIndia(true);
+      }
+    };
+
+    detectLocation();
+  }, []);
 
   // Load Razorpay script
   useEffect(() => {
@@ -83,23 +140,38 @@ export default function BookDemo() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // Get current price and currency based on location
+  const getPriceConfig = () => {
+    if (isIndia === null) {
+      // Still detecting, return default (India)
+      return { amount: PRICE_INR, currency: 'INR', display: '₹199' };
+    }
+    if (isIndia) {
+      return { amount: PRICE_INR, currency: 'INR', display: '₹199' };
+    } else {
+      return { amount: PRICE_USD, currency: 'USD', display: '$10' };
+    }
+  };
+
   // Create order on server (with auto-capture enabled)
   const createOrder = async (): Promise<string | null> => {
     try {
+      const priceConfig = getPriceConfig();
       const response = await fetch('/api/create-razorpay-order', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          amount: DEMO_PRICE_INR,
-          currency: 'INR',
+          amount: priceConfig.amount,
+          currency: priceConfig.currency,
           receipt: `demo_${Date.now()}`,
           notes: {
             customer_name: formData.name,
             customer_email: formData.email,
             customer_phone: formData.phone,
             purpose: 'Demo Class Booking',
+            location: isIndia ? 'India' : 'International',
           },
         }),
       });
@@ -136,28 +208,45 @@ export default function BookDemo() {
     setIsLoading(true);
 
     try {
+      const priceConfig = getPriceConfig();
+      
+      // Debug logging
+      console.log('💳 Payment Configuration:', {
+        location: isIndia ? 'India' : 'International',
+        amount: priceConfig.amount,
+        currency: priceConfig.currency,
+        display: priceConfig.display,
+        amountInCurrency: priceConfig.currency === 'INR' 
+          ? `₹${priceConfig.amount / 100}` 
+          : `$${priceConfig.amount / 100}`
+      });
+      
       // Step 1: Create order on server (with auto-capture)
       const orderId = await createOrder();
       
       if (!orderId) {
         // Fallback to direct checkout if order creation fails
-        console.warn('Order creation failed, using direct checkout');
+        console.warn('⚠️ Order creation failed, using direct checkout');
+      } else {
+        console.log('✅ Order created successfully:', orderId);
       }
 
       // Step 2: Open Razorpay checkout
       const options: RazorpayOptions = {
         key: RAZORPAY_KEY_ID,
-        amount: DEMO_PRICE_INR,
-        currency: 'INR',
+        amount: priceConfig.amount,
+        currency: priceConfig.currency,
         name: 'FluentEdge Lab',
         description: 'Demo Class Booking Fee',
         ...(orderId && { order_id: orderId }), // Include order_id if available
         handler: function (response: RazorpayResponse) {
           // Payment successful - with order_id, payment is AUTO-CAPTURED!
-          console.log('Payment ID:', response.razorpay_payment_id);
-          if (response.razorpay_order_id) {
-            console.log('Order ID:', response.razorpay_order_id);
-          }
+          console.log('✅ Payment Successful!', {
+            paymentId: response.razorpay_payment_id,
+            orderId: response.razorpay_order_id,
+            currency: priceConfig.currency,
+            amount: priceConfig.display
+          });
           setPaymentSuccess(true);
           setIsLoading(false);
         },
@@ -224,7 +313,7 @@ export default function BookDemo() {
           {/* Price Badge */}
           <div className="inline-flex items-center bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 px-6 py-3 rounded-full text-lg font-semibold mb-8">
             <span className="mr-2">💰</span>
-            Demo Fee: {DEMO_PRICE_DISPLAY}
+            Demo Fee: {isIndia === null ? 'Loading...' : getPriceConfig().display}
           </div>
 
           <div className="bg-blue-50 dark:bg-slate-800 rounded-lg p-6 mb-8">
@@ -304,7 +393,7 @@ export default function BookDemo() {
                     </>
                   ) : (
                     <>
-                      Pay {DEMO_PRICE_DISPLAY} & Book Demo
+                      Pay {isIndia === null ? '...' : getPriceConfig().display} & Book Demo
                     </>
                   )}
                 </button>

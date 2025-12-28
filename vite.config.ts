@@ -29,10 +29,25 @@ function devApiPlugin(): Plugin {
             try {
               const { amount, currency = 'INR', receipt, notes } = JSON.parse(body);
 
-              if (!amount || amount < 100) {
+              // Validate amount based on currency
+              if (!amount) {
+                res.statusCode = 400;
+                res.setHeader('Content-Type', 'application/json');
+                res.end(JSON.stringify({ error: 'Amount is required' }));
+                return;
+              }
+              
+              if (currency === 'INR' && amount < 100) {
                 res.statusCode = 400;
                 res.setHeader('Content-Type', 'application/json');
                 res.end(JSON.stringify({ error: 'Invalid amount. Minimum is 100 paise (₹1)' }));
+                return;
+              }
+              
+              if (currency === 'USD' && amount < 100) {
+                res.statusCode = 400;
+                res.setHeader('Content-Type', 'application/json');
+                res.end(JSON.stringify({ error: 'Invalid amount. Minimum is 100 cents ($1)' }));
                 return;
               }
 
