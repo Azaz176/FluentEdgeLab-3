@@ -12,6 +12,7 @@ import BlogPostPage from "@/react-app/pages/BlogPost";
 import FAQPage from "@/react-app/pages/FAQ";
 import PoliciesPage from "@/react-app/pages/Policies";
 import ScrollToTop from "@/react-app/components/ScrollToTop";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default function App() {
   return (
